@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00BCD4"
+    tools:context=".MotivationActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Daily Motivation"
+            android:textSize="35sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:background="@drawable/shape"
+            android:padding="10dp"
+            android:textColor="#3F51B5"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/imagenine"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/recipesText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Daily Motivation:\n\n1. Start your day with a positive mindset.\n2. Set clear goals for the day.\n3. Believe in yourself and your abilities.\n4. Stay focused and avoid distractions.\n5. Learn from your mistakes and keep improving.\n6. Surround yourself with positivity.\n7. Keep pushing even when it gets tough.\n8. End your day with gratitude and reflection."
+            android:textSize="25sp"
+            android:textColor="#123"
+            android:padding="16dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
