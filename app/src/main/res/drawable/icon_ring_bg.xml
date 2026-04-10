@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/icon_ring_bg.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="#2E9E72" />
+    <stroke
+        android:width="2dp"
+        android:color="#4DFFFFFF" />
+</shape>

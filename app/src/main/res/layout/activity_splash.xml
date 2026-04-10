@@ -1,53 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient">
+    android:background="@drawable/splash_gradient_bg">
 
-    <!-- Logo -->
-    <ImageView
-        android:contentDescription="@null"
-        app:tint="@null"
-        android:id="@+id/logo"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_centerInParent="true"
-        android:src="@drawable/betterhealth"
-        android:alpha="0.05"
-        android:scaleX="1.0"
-        android:scaleY="1.0" />
+ <!-- Decorative top-left circle -->
+ <View
+     android:id="@+id/decorCircleTopLeft"
+     android:layout_width="220dp"
+     android:layout_height="220dp"
+     android:layout_gravity="top|start"
+     android:layout_marginStart="-70dp"
+     android:layout_marginTop="-70dp"
+     android:background="@drawable/circle_accent_top" />
 
+ <!-- Decorative bottom-right circle -->
+ <View
+     android:id="@+id/decorCircleBottomRight"
+     android:layout_width="280dp"
+     android:layout_height="280dp"
+     android:layout_gravity="bottom|end"
+     android:layout_marginEnd="-90dp"
+     android:layout_marginBottom="-90dp"
+     android:background="@drawable/circle_accent_bottom" />
 
+ <!-- Center Content -->
+ <LinearLayout
+     android:id="@+id/centerContent"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_gravity="center"
+     android:orientation="vertical"
+     android:gravity="center"
+     android:alpha="0">
 
-    <!-- Glow Effect (duplicate logo behind) -->
- <ImageView
-     android:id="@+id/glow"
-     android:layout_width="150dp"
-     android:layout_height="150dp"
-     android:layout_centerInParent="true"
-     android:src="@drawable/betterhealth"
-     android:alpha="0.05"
-     android:scaleX="1.0"
-     android:scaleY="1.0"
-     app:tint="@null"
-     android:contentDescription="@null"/>
+  <!-- Leaf / Icon Container -->
+  <FrameLayout
+      android:id="@+id/iconRing"
+      android:layout_width="110dp"
+      android:layout_height="110dp"
+      android:layout_gravity="center_horizontal">
 
- <!-- App Name -->
- <TextView
-    android:id="@+id/splashText"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Your daily dose of better living."
-    android:textSize="32sp"
-    android:textAlignment="center"
-    android:textColor="#FFFFFF"
-    android:textStyle="bold|italic"
-    android:layout_centerHorizontal="true"
-    android:layout_alignParentBottom="true"
-    android:layout_marginBottom="80dp"
-    android:alpha="1"
-    android:fontFamily="sans-serif-light"/>
-</RelativeLayout>
+   <View
+       android:layout_width="110dp"
+       android:layout_height="110dp"
+       android:background="@drawable/icon_ring_bg" />
+
+   <ImageView
+       android:id="@+id/splashIcon"
+       android:layout_width="58dp"
+       android:layout_height="58dp"
+       android:layout_gravity="center"
+       android:src="@drawable/ic_leaf"
+       android:tint="#FFFFFF"
+       android:scaleType="fitCenter" />
+  </FrameLayout>
+
+  <!-- App Name -->
+  <TextView
+      android:id="@+id/splashTitle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="28dp"
+      android:text="Wellness"
+      android:textSize="46sp"
+      android:textColor="#FFFFFF"
+      android:textStyle="bold"
+      android:letterSpacing="0.08"
+      android:fontFamily="@font/playfair_display_bold" />
+
+  <!-- Tagline -->
+  <TextView
+      android:id="@+id/splashTagline"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="6dp"
+      android:text="YOUR DAILY BALANCE"
+      android:textSize="11sp"
+      android:textColor="#A8E6CF"
+      android:letterSpacing="0.22"
+      android:fontFamily="@font/dm_sans_medium" />
+
+  <!-- Divider line -->
+  <View
+      android:id="@+id/dividerLine"
+      android:layout_width="0dp"
+      android:layout_height="1dp"
+      android:layout_marginTop="28dp"
+      android:background="#4DFFFFFF" />
+
+ </LinearLayout>
+
+ <!-- Loader at the bottom -->
+ <LinearLayout
+     android:id="@+id/loaderContainer"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_gravity="bottom|center_horizontal"
+     android:layout_marginBottom="72dp"
+     android:orientation="vertical"
+     android:gravity="center"
+     android:alpha="0">
+
+  <!-- Dot Loader -->
+  <LinearLayout
+      android:id="@+id/dotLoader"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:gravity="center_vertical">
+
+   <View
+       android:id="@+id/dot1"
+       android:layout_width="9dp"
+       android:layout_height="9dp"
+       android:layout_marginEnd="7dp"
+       android:background="@drawable/loader_dot" />
+
+   <View
+       android:id="@+id/dot2"
+       android:layout_width="9dp"
+       android:layout_height="9dp"
+       android:layout_marginEnd="7dp"
+       android:background="@drawable/loader_dot" />
+
+   <View
+       android:id="@+id/dot3"
+       android:layout_width="9dp"
+       android:layout_height="9dp"
+       android:background="@drawable/loader_dot" />
+  </LinearLayout>
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="14dp"
+      android:text="Loading your experience..."
+      android:textSize="12sp"
+      android:textColor="#80FFFFFF"
+      android:letterSpacing="0.06"
+      android:fontFamily="@font/dm_sans_regular" />
+
+ </LinearLayout>
+
+</FrameLayout>

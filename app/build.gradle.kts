@@ -19,6 +19,10 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+    // ✅ Add this block
+    buildFeatures {
+        viewBinding = true
+    }
 
     buildTypes {
         release {
